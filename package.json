@@ -1,0 +1,21 @@
+{
+  "name": "pc2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.37.1",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "@cucumber/cucumber": "^9.4.0",
+    "D": "^1.0.0"
+  }
+}
