@@ -13,7 +13,7 @@ When('I enter username as {string}', { timeout: 9000 }, async function (username
     await page.locator('#txt_email').type(username)
 });
 
-When('I type password as {string}', { timeout: 2000 }, async function (password) {
+When('I enter password as {string}', { timeout: 2000 }, async function (password) {
     await page.locator('#input_password').type(password)
 });
 
@@ -21,14 +21,14 @@ When('I click button Login', async function () {
     await page.locator('#btn_submit').click()
 });
 
-Then('I navigate to HomePage', { timeout: 9000 }, async function () {
+Then('I navigate to HomePage successfully', { timeout: 9000 }, async function () {
     await expect(page).toHaveTitle("iChiba Global")
     await page.waitForTimeout(5000)
     await page.close()
     await browser.close()
 });
 
-Then('I navigate to failed', { timeout: 9000 }, async function () {
+Then('I navigate to HomePage failed', { timeout: 9000 }, async function () {
     await expect(page).not.toHaveTitle("iChiba Global")
     await page.waitForTimeout(5000)
     await page.close()
