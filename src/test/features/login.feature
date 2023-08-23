@@ -1,7 +1,7 @@
 Feature: Test login
 
   Scenario: Login successfully
-    Given I go to https://test-org.ichiba.net/vi/
+    Given I go  to https://test-org.ichiba.net/vi/
     When I enter username as "namtvn@ichiba.vn"
     And I enter password as "Cr@zyloop1"
     And I click button Login
