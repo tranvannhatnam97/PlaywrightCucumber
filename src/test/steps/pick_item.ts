@@ -1,6 +1,5 @@
 import { Given, When, Then } from "@cucumber/cucumber";
-import { defineParams } from "../../commons/Define";
-import { page, browser } from "./search";
+import { pageFixture } from "../../hooks/pageFixture";
 import {
   chromium,
   Page,
@@ -14,7 +13,7 @@ When(
   "I add item with name {string}",
   { timeout: 15000 },
   async function (item_name) {
-    await page
+    await pageFixture.page
       .locator(
         `//div[@class="inventory_list"]//div[@class="inventory_item_name"][contains(text(),"${item_name}")]/../../following-sibling::div//button`
       )
@@ -26,18 +25,16 @@ Then(
   "The cart has item with name {string}",
   { timeout: 9000 },
   async function (item_name) {
-    var cart = await page.locator("#shopping_cart_container");
-    console.log("type:::" + JSON.stringify(cart));
+    var cart = await pageFixture.page.locator("#shopping_cart_container");
+    console.log("type:::" + typeof cart);
     await cart.click();
 
-    await page.waitForLoadState("domcontentloaded");
+    await pageFixture.page.waitForLoadState("domcontentloaded");
     await expect(
-      page.locator(
+      pageFixture.page.locator(
         `//div[@class="inventory_item_name"][contains(text(),"${item_name}")]`
       )
     ).toBeVisible();
-    await page.waitForTimeout(5000);
-    await page.close();
-    await browser.close();
+    await pageFixture.page.waitForTimeout(5000);
   }
 );

@@ -5,7 +5,11 @@
     },
     "paths": ["src/test/features/pick_item.feature"],
     "dryRun": false,
-    "require": ["src/test/steps/search.ts", "src/test/steps/pick_item.ts"],
+    "require": [
+      "src/test/steps/search.ts",
+      "src/test/steps/pick_item.ts",
+      "src/hooks/hooks.ts"
+    ],
     "requireModule": ["ts-node/register"],
     "format": [
       "progress-bar",
