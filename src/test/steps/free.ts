@@ -1,21 +1,18 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { pageFixture } from "../../hooks/pageFixture";
-import {
-  chromium,
-  Page,
-  Browser,
-  webkit,
-  expect,
-  firefox,
-} from "@playwright/test";
+import { expect } from "@playwright/test";
 
-Given("I {action} {url}", async function (action, url) {
-  if (action == "go to") {
-    await pageFixture.page.goto(url);
-    // await pageFixture.loadElements();
-    console.log("elements:::" + JSON.stringify(pageFixture.elements));
+Given(
+  "I {action} {project}.{page}",
+  async function (action, project, pagename) {
+    if (action == "go to") {
+      await pageFixture.loadPage(project, pagename);
+      await pageFixture.page.goto(pageFixture.url);
+      await pageFixture.page.waitForTimeout(2000);
+      console.log("elements:::" + JSON.stringify(pageFixture.elements));
+    }
   }
-});
+);
 
 When("I {action} {element} as {string}", async function (action, element, txt) {
   if (action == "enter") {
@@ -36,7 +33,36 @@ When("I {action} {element} as {string}", async function (action, element, txt) {
       await pageFixture.page
         .locator(pageFixture.elements[String(elementName)].locator)
         .type(txt);
-      await pageFixture.page.waitForTimeout(5000);
+      await pageFixture.page.waitForTimeout(2000);
     }
   }
 });
+When("I {action} {element}", async function (action, element) {
+  if (action != "click") {
+    throw new Error(`Why the hell do you want to ${action} a ${element}!`);
+  }
+  try {
+    const tmp = element.match(/[ :]+[^ :]+/);
+    console.log("tmp:::" + tmp);
+    const elementName = String(tmp).match(/[^ :]+/);
+    console.log("elementName:::" + elementName);
+    await pageFixture.page
+      .locator(pageFixture.elements[String(elementName)].locator)
+      .click();
+    await pageFixture.page.waitForTimeout(2000);
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+Then(
+  "I {action} {project}.{page} successfully!",
+  async function (action, project, pagename) {
+    if (action == "navigate to") {
+      await pageFixture.loadPage(project, pagename);
+      await expect(pageFixture.page).toHaveURL(pageFixture.url);
+      await pageFixture.page.waitForTimeout(2000);
+    } else {
+      console.log("What else u want to check for url!");
+    }
+  }
+);

@@ -1,0 +1,30 @@
+{
+  "SauceDemo": {
+    "HomePage": {
+      "elements": {
+        "username_input": {
+          "locator": "#user-name",
+          "data_type": "string"
+        },
+        "password_input": {
+          "locator": "#password",
+          "data_type": "string"
+        },
+        "login_button": {
+          "locator": "#login-button",
+          "type": "button"
+        }
+      },
+      "url": "https://www.saucedemo.com"
+    },
+    "InventoryPage": {
+      "elements": {
+        "username_input": {
+          "locator": ".shopping_cart_link",
+          "type": "button"
+        }
+      },
+      "url": "https://www.saucedemo.com/inventory.html"
+    }
+  }
+}

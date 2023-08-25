@@ -1,13 +1,17 @@
 import { Page } from "@playwright/test";
-import pageJson from "../pom/login_pom.json";
+import pageJson from "../pom/saucedemo/info.json";
 class PageFixture {
   //@ts-ignore
   page = undefined as Page;
+  url = undefined;
+  name = undefined;
+
   elements = {};
-  constructor() {
-    this.elements = pageJson.elements;
-  }
-  loadElements = async () => {};
+  constructor() {}
+  loadPage = async function (project: string, pagename: string) {
+    this.elements = pageJson[project][pagename].elements;
+    this.name = pagename;
+    this.url = pageJson[project][pagename].url;
+  };
 }
-console.log(pageJson.url);
 export let pageFixture = new PageFixture();
