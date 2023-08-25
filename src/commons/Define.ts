@@ -13,7 +13,8 @@ export function defineParams() {
   });
   defineParameterType({
     name: "element",
-    regexp: /button|text input|lable|check|radio button|dropdown/,
+    regexp:
+      /button *: *[^ ]+|input *: *[^ ]+|lable *: *[^ ]+|check *: *[^ ]+|radio button *: *[^ ]+|dropdown *: *[^ ]+/,
     transformer: (s) => new String(s),
   });
 }
