@@ -3,15 +3,15 @@
     "HomePage": {
       "elements": {
         "username_input": {
-          "locator": "#user-name",
+          "selector": "#user-name",
           "data_type": "string"
         },
         "password_input": {
-          "locator": "#password",
+          "selector": "#password",
           "data_type": "string"
         },
         "login_button": {
-          "locator": "#login-button",
+          "selector": "#login-button",
           "type": "button"
         }
       },
@@ -20,7 +20,7 @@
     "InventoryPage": {
       "elements": {
         "username_input": {
-          "locator": ".shopping_cart_link",
+          "selector": ".shopping_cart_link",
           "type": "button"
         }
       },

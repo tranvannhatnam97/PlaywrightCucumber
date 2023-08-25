@@ -31,7 +31,7 @@ When("I {action} {element} as {string}", async function (action, element, txt) {
           pageFixture.elements[String(elementName)]
       );
       await pageFixture.page
-        .locator(pageFixture.elements[String(elementName)].locator)
+        .locator(pageFixture.elements[String(elementName)].selector)
         .type(txt);
       await pageFixture.page.waitForTimeout(2000);
     }
@@ -47,7 +47,7 @@ When("I {action} {element}", async function (action, element) {
     const elementName = String(tmp).match(/[^ :]+/);
     console.log("elementName:::" + elementName);
     await pageFixture.page
-      .locator(pageFixture.elements[String(elementName)].locator)
+      .locator(pageFixture.elements[String(elementName)].selector)
       .click();
     await pageFixture.page.waitForTimeout(2000);
   } catch (error) {
