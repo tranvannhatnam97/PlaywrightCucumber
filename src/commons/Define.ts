@@ -13,7 +13,7 @@ export function defineParams() {
   });
   defineParameterType({
     name: "project",
-    regexp: /SauceDemo|Ship4p/,
+    regexp: /SauceDemo|Ship4p|Ichiba/,
     transformer: (s) => new String(s),
   });
   defineParameterType({

@@ -1,4 +1,4 @@
-Feature: Search 
+Feature: Login 
 
   Scenario: Login successfully
     Given I go to SauceDemo.HomePage

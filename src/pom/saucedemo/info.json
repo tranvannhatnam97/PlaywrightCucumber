@@ -19,12 +19,33 @@
     },
     "InventoryPage": {
       "elements": {
-        "username_input": {
+        "cart": {
           "selector": ".shopping_cart_link",
           "type": "button"
         }
       },
       "url": "https://www.saucedemo.com/inventory.html"
+    }
+  },
+  "Ichiba": {
+    "LoginPage": {
+      "elements": {
+        "username_input": {
+          "selector": "#txt_email",
+          "data_type": "string"
+        },
+        "password_input": {
+          "selector": "#input_password"
+        },
+        "login_button": {
+          "selector": "#btn_submit"
+        }
+      },
+      "url": "https://test-org.ichiba.net/vi/"
+    },
+    "HomePage": {
+      "elements": {},
+      "url": "https://test-org.ichiba.net/vi/"
     }
   }
 }
