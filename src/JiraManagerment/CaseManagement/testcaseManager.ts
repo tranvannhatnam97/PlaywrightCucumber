@@ -11,7 +11,6 @@ async function getTestcases(
     url: `https://tcms.aiojiraapps.com/aio-tcms/api/v1/project/${projectId}/testcase?startAt=${startAt}&maxResults=100&needDataInRTF=false`,
     headers: {
       Authorization: `AioAuth ${token}`,
-      Cookie: "JSESSIONID=p2~46C198027657F2AC5366444547802EEC",
     },
   };
 
