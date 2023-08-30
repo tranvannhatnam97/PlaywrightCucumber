@@ -8,7 +8,7 @@ export function defineParams() {
   });
   defineParameterType({
     name: "action",
-    regexp: / *go *to| *click *| *enter *|navigate to/,
+    regexp: / *go *to| *click *| *enter *|navigate to|bấm|nhập|kích|/,
     transformer: (s) => new String(s),
   });
   defineParameterType({

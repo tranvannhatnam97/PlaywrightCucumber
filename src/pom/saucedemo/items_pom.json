@@ -1,0 +1,16 @@
+{
+  "SauceDemo": {
+    "HomePage": {
+      "url": "https://www.saucedemo.com",
+      "elements": {
+        "username_input": { "selector": "#user-name" },
+        "password_input": { "selector": "#password" },
+        "login_button": { "selector": "#login-button" }
+      }
+    },
+    "InventoryPage": {
+      "url": "https://www.saucedemo.com/inventory.html",
+      "elements": { "cart": { "selector": ".shopping_cart_link" } }
+    }
+  }
+}
