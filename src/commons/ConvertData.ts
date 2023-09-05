@@ -44,6 +44,8 @@ function getPOMFromFolder(folderPath) {
   }
 }
 export function getPOMFromFile(projetName) {
+  console.log("\nStart read pom file of project: " + projetName);
+
   if (!isFileExists(DATA_PATH, `${projetName}.xlsx`)) {
     throw new Error(`Project ${projetName} document file does not exist!`);
   }
@@ -54,10 +56,10 @@ export function getPOMFromFile(projetName) {
     );
     const infoSheet: XLSX.WorkSheet = workbook.Sheets["info"];
     const infoJson = XLSX.utils.sheet_to_json(infoSheet);
-    console.log("infoJson:" + JSON.stringify(infoJson));
+    // console.log("infoJson:" + JSON.stringify(infoJson));
     //@ts-ignore
     const pageNames = infoJson.map((page) => page.pageName);
-    console.log("pageNames:" + JSON.stringify(pageNames));
+    // console.log("pageNames:" + JSON.stringify(pageNames));
     var worksheetNames = workbook.SheetNames;
     worksheetNames = worksheetNames.filter((element) => element !== "info");
     try {
@@ -68,13 +70,13 @@ export function getPOMFromFile(projetName) {
         const url = infoJson.find((item) => item["pageName"] === worksheetName)[
           "url"
         ];
-        console.log("url:" + url);
+        // console.log("url:" + url);
         var pageObj = {};
         pageObj["url"] = url;
         var elementsObj = {};
         const elementsSheet: XLSX.WorkSheet = workbook.Sheets[worksheetName];
         const elementsJson = XLSX.utils.sheet_to_json(elementsSheet);
-        console.log("elementsJson:" + JSON.stringify(elementsJson));
+        // console.log("elementsJson:" + JSON.stringify(elementsJson));
         for (var element of elementsJson) {
           var elementObj = {};
           elementObj["selector"] = element["selector"];
@@ -83,7 +85,7 @@ export function getPOMFromFile(projetName) {
         pageObj["elements"] = elementsObj;
         projectObj[worksheetName] = pageObj;
       }
-      console.log("projectObj:::" + JSON.stringify(projectObj));
+      // console.log("projectObj:::" + JSON.stringify(projectObj));
 
       return projectObj;
     } catch (error) {

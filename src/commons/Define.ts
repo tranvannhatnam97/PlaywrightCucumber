@@ -8,12 +8,12 @@ export function defineParams() {
   });
   defineParameterType({
     name: "action",
-    regexp: / *go *to| *click *| *enter *|navigate to|bấm|nhập|kích|/,
+    regexp: / *go *to| *click *| *enter *|navigate to|/,
     transformer: (s) => new String(s),
   });
   defineParameterType({
     name: "project",
-    regexp: /SauceDemo|Ship4p|Ichiba/,
+    regexp: /SauceDemo|Ship4p|Ichiba|PimTrading/,
     transformer: (s) => new String(s),
   });
   defineParameterType({
