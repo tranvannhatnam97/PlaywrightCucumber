@@ -2,6 +2,7 @@ import { Given, When, Then } from "@cucumber/cucumber";
 import { pageFixture } from "../../../hooks/pageFixture";
 import { expect } from "@playwright/test";
 import { queryDatabase } from "../../../commons/postgre";
+
 Then(
   "Browser send api get list subscribed source and get right response",
   async function () {
@@ -20,13 +21,22 @@ Then(
     //   "https://test-api.ichiba.net/pim/ws-nam/workspace-sources"
     // );
     // await expect(response).toBeOK();
-    for (const request of pageFixture.requests) {
-      if (
-        request.url() ==
-        "https://test-api.ichiba.net/pim/ws-nam/workspace-sources/subscribing"
-      ) {
-        console.log(await request.method());
-      }
-    }
+
+    // for (const request of pageFixture.requests) {
+    //   console.log(request.url());
+
+    //   if (
+    //     request.url() ==
+    //     "https://test-api.ichiba.net/pim/ws-nam/workspace-sources/subscribing"
+    //   ) {
+    //     console.log(await request.method());
+    //   }
+    // }
+    expect(
+      await pageFixture.requests.some(async (request) => {
+        (await request.url()) ===
+          "https://test-api.ichiba.net/pim/ws-nam/workspace-sources/subscribing";
+      })
+    ).toBeTruthy();
   }
 );
