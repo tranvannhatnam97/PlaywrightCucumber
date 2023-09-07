@@ -1,0 +1,15 @@
+Feature: Login Pim Trading
+
+  Scenario: Login Pim Trading successfully
+    Given I go to LoginPage
+    When I enter username as "<username>"
+    And I enter password as "<password>"
+    And I click button Login
+    Then I navigate to WorkspacePage successfully!
+    When I choose workspace with workspace name "ws nam"
+    Then I navigate to TradingCatalogPage with slug-name "ws-nam"
+    Examples:
+    |username|password|
+    |namtvn@ichiba.vn|Cr@zyloop1|
+
+    
