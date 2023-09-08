@@ -7,7 +7,7 @@ export class WorkspacePage extends AbstractPage {
     super(page);
     this.label = this.page.locator('//h1[contains(text(),"workspaceSetup")]');
   }
-  async check(): Promise<void> {
+  async checkIn(): Promise<void> {
     await expect(this.label).toBeVisible();
   }
   async access(): Promise<void> {}

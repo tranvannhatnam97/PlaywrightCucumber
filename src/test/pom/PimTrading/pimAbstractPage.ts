@@ -15,9 +15,8 @@ export abstract class PimAbstractPage extends AbstractPage {
   constructor(page: Page) {
     super(page);
   }
-  async check(): Promise<void> {
+  async checkIn(): Promise<void> {
     await console.log("title:::" + (await this.page.title()));
-
     await expect(await this.page.title()).toContain("PIM | iChiba Global");
   }
   async checkWorkspaceWithSlugName(slugName) {

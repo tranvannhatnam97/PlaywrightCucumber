@@ -13,7 +13,7 @@ export class LoginPage extends AbstractPage {
     this.loginButton = this.page.locator("#btn_submit");
     this.label = this.page.locator('//span[contains(text(),"Login")]');
   }
-  async check(): Promise<void> {
+  async checkIn(): Promise<void> {
     await expect(this.label).toBeVisible();
   }
   async enterUsername(username) {

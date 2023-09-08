@@ -10,8 +10,8 @@ export class TradingCatalogPage extends HomePage {
       '//h1[contains(text(),"Tradding Catalog")]'
     );
   }
-  async check(): Promise<void> {
-    await super.check();
+  async checkIn(): Promise<void> {
+    await super.checkIn();
     await expect(this.topLabel).toBeVisible();
   }
 }

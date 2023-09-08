@@ -11,15 +11,20 @@ export async function queryDatabase(query) {
   try {
     const client = await pool.connect();
     const result = await client.query(query);
-    const workspaces = result.rows;
+    const res = result.rows;
     client.release();
-    return workspaces;
+    return res;
   } catch (error) {
     console.error("Error executing query:", error);
   }
 }
-// const query = "SELECT * FROM user_management.workspaces";
+// const query =
+//   "select distinct source.name " +
+//   "from crawler.origin " +
+//   "join crawler.source on " +
+//   "source.origin_id = origin.id " +
+//   "order by origin.name ASC, source.name DESC;";
 // queryDatabase(query)
-//   .then((workspaces) => console.log("Workspaces:", workspaces))
+//   .then((res) => console.log("res:", res))
 //   .catch((error) => console.error("Error:", error))
 //   .finally(() => pool.end());
