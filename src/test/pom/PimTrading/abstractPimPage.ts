@@ -1,6 +1,6 @@
 import { Page, expect } from "@playwright/test";
 import { AbstractPage } from "../abstractPage";
-export abstract class PimAbstractPage extends AbstractPage {
+export abstract class AbstractPimPage extends AbstractPage {
   workspaceMenu = undefined;
   tradingCatalogMenu = undefined;
   crawlerCatalogMenu = undefined;
@@ -12,12 +12,12 @@ export abstract class PimAbstractPage extends AbstractPage {
   notifyTopHeader = undefined;
   helpTopHeader = undefined;
   profileTopHeader = undefined;
+  title = "PIM | iChiba Global";
   constructor(page: Page) {
     super(page);
   }
   async checkIn(): Promise<void> {
-    await console.log("title:::" + (await this.page.title()));
-    await expect(await this.page.title()).toContain("PIM | iChiba Global");
+    await expect.soft(await this.page.title()).toContain(this.title);
   }
   async checkWorkspaceWithSlugName(slugName) {
     await expect(this.page.url()).toContain(slugName);

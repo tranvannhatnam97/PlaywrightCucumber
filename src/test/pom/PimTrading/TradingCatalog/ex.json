@@ -1,18 +1,16 @@
 [
   {
-    "name": "Việt Nam",
+    "name": "Japan",
     "sources": [
       { "name": "Zozo" },
-      { "name": "Yahoo Shopping" },
-      { "name": "Yahoo Auction" },
-      { "name": "Rakuten" },
       { "name": "Rakuma" },
-      { "name": "PaypayFleamarket" },
+      { "name": "Yahoo Auction" },
       { "name": "Mercari" },
-      { "name": "EbayUs" },
-      { "name": "Shopee" }
+      { "name": "Yahoo Shopping" },
+      { "name": "Rakuten" },
+      { "name": "PaypayFleamarket" }
     ]
   },
-  { "name": "US", "sources": [{ "name": "Macys" }] },
-  { "name": "Việt Nam", "sources": [{ "name": "Tiki" }] }
+  { "name": "US", "sources": [{ "name": "EbayUs" }, { "name": "Macys" }] },
+  { "name": "Việt Nam", "sources": [{ "name": "Shopee" }, { "name": "Tiki" }] }
 ]

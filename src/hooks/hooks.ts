@@ -12,6 +12,7 @@ BeforeAll(async function () {
   pageFixture.page = page;
 });
 AfterAll(async function () {
+  await pageFixture.page.waitForLoadState("networkidle");
   await page.close();
   await browser.close();
 });

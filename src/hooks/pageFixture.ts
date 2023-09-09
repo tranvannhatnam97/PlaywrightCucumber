@@ -13,19 +13,5 @@ class PageFixture {
     this.name = pagename;
     this.url = projectObj[pagename].url;
   };
-  // collectRequests = async function () {
-  //   this.page.requests = [];
-
-  //   // await this.page.route("**/*", async (route: any) => {
-  //   //   this.requests.push(route.request());
-  //   //   await route.continue();
-  //   // });
-  //   // await Promise.all(this.requests.map((request) => request.response()));
-
-  //   await this.page.on(
-  //     "request",
-  //     async (request) => await this.page.requests.push(request)
-  //   );
-  // };
 }
 export let pageFixture = new PageFixture();
