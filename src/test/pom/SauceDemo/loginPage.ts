@@ -4,19 +4,19 @@ export class LoginPageSauceDemo extends AbstractPage {
   usernameInput = undefined;
   passwordInput = undefined;
   loginButton = undefined;
-
+  url = "https://www.saucedemo.com/";
   constructor(page: Page) {
     super(page);
     this.usernameInput = this.page.locator("#user-name");
     this.passwordInput = this.page.locator("#password");
     this.loginButton = this.page.locator("#login-button");
   }
-  async check() {
+  async checkIn() {
     await expect(this.loginButton).toBeVisible();
   }
   async access() {
-    await this.page.goto("https://www.saucedemo.com/");
-    await this.check();
+    await this.page.goto(this.url);
+    await this.checkIn();
     await this.page.waitForTimeout(1000);
   }
   async enterUsername(username) {

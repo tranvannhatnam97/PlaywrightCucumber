@@ -1,6 +1,7 @@
 import { Page, expect } from "@playwright/test";
 import { AbstractPage } from "../abstractPage";
 export class InventoryPageSauceDemo extends AbstractPage {
+  url = "https://www.saucedemo.com/inventory.html";
   productLabel = undefined;
   cartButton = undefined;
   constructor(page: Page) {
@@ -10,12 +11,12 @@ export class InventoryPageSauceDemo extends AbstractPage {
     );
     this.cartButton = this.page.locator(".shopping_cart_link");
   }
-  async check(): Promise<void> {
+  async checkIn(): Promise<void> {
     await expect(this.productLabel).toBeVisible();
   }
   async access(): Promise<void> {
-    await this.page.goto("https://www.saucedemo.com/inventory.html");
-    await this.check();
+    await this.page.goto(this.url);
+    await this.checkIn();
   }
   async addItemWithName(itemName) {
     await this.page

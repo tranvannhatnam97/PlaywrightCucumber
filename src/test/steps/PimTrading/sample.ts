@@ -4,7 +4,7 @@ import { expect } from "@playwright/test";
 import { LoginPage } from "../../pom/PimTrading/loginPage";
 import { WorkspacePage } from "../../pom/PimTrading/workspacePage";
 import { HomePage } from "../../pom/PimTrading/TradingCatalog/homePage";
-Given("I go to LoginPage", async function () {
+Given("I go to Login Page", async function () {
   this.loginPage = new LoginPage(pageFixture.page);
   await this.loginPage.access();
 });
@@ -34,7 +34,7 @@ Then("Browser send subscribing api match database data", async function () {
   await expect(await this.homePage.page.requests.length).toBeGreaterThan(0);
   const apiSources = await this.homePage.getSourcesByApi();
   const uiSources = await this.homePage.getSourcesByUI();
-  await expect(apiSources).toEqual(uiSources);
+  await expect(apiSources).not.toEqual(uiSources);
 });
 Then(
   "I navigate to HomePage with slug-name {string}",

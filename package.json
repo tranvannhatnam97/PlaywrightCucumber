@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js test "
+    "test": "cucumber-js test --glue ",
+    "test-set": "npx ts-node ./TestManagement/testExecutor.ts",
+    "hello": "echo hello"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,9 @@
     "@cucumber/cucumber": "^9.4.0",
     "axios": "^1.5.0",
     "D": "^1.0.0",
-    "xlsx": "^0.18.5"
+    "execa": "^8.0.1",
+    "node-cmd": "^5.0.0",
+    "xlsx": "^0.18.5",
+    "yargs": "^17.7.2"
   }
 }

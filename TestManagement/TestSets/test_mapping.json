@@ -1,0 +1,12 @@
+[
+  {
+    "tc_id": "SMC-TC-001",
+    "paths": ["src/test/features/PimTrading/sample.feature"],
+    "steps": ["src/test/steps/PimTrading/sample.ts"]
+  },
+  {
+    "tc_id": "SMC-TC-002",
+    "paths": ["src/test/features/SauceDemo/sample.feature"],
+    "steps": ["src/test/steps/SauceDemo/sauceDemo.ts"]
+  }
+]

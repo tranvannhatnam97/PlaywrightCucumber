@@ -1,11 +1,22 @@
+const yargs = require("yargs");
+const argv = yargs
+  .option("paths", {
+    description: "Paths of feature files",
+    boolean: true,
+  })
+  .option("steps", {
+    description: "Paths of typescript steps files",
+    string: true,
+  }).argv;
+console.log("Pahts:" + JSON.stringify(argv.paths));
 module.exports = {
   default: {
     formatOptions: {
       snippetInterface: "async-await",
     },
-    paths: ["src/test/features/ichiba_login.feature"],
+    paths: argv.paths,
     dryRun: false,
-    require: ["src/test/steps/free.ts", "src/hooks/hooks.ts"],
+    require: argv.steps,
     requireModule: ["ts-node/register"],
     format: [
       "progress-bar",

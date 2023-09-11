@@ -1,7 +1,7 @@
 Feature: Login Pim Trading
 
   Scenario: Login Pim Trading successfully
-    Given I go to LoginPage
+    Given I go to Login Page
     When I enter username as "<username>"
     And I enter password as "<password>"
     And I click button Login

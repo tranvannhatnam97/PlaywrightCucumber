@@ -21,7 +21,7 @@ When("I click button Login", async function () {
 });
 Then("I navigate to Inventory Page successfully!", async function () {
   this.inventoryPageSauceDemo = new InventoryPageSauceDemo(pageFixture.page);
-  await this.inventoryPageSauceDemo.check();
+  await this.inventoryPageSauceDemo.checkIn();
 });
 When("I add item with name {string}", async function (itemName) {
   await this.inventoryPageSauceDemo.addItemWithName(itemName);
@@ -29,6 +29,6 @@ When("I add item with name {string}", async function (itemName) {
 Then("The cart has item with name {string}", async function (itemName) {
   await this.inventoryPageSauceDemo.gotoCart();
   this.cartPageSauceDemo = new CartPageSauceDemo(pageFixture.page);
-  await this.cartPageSauceDemo.check();
+  await this.cartPageSauceDemo.checkIn();
   await this.cartPageSauceDemo.checkItemWithName(itemName);
 });
