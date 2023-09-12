@@ -1,10 +1,10 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 import { queryDatabase } from "../../../commons/postgre";
-import { LoginPageSauceDemo } from "../../pom/SauceDemo/loginPage";
+import { LoginPageSauceDemo } from "../../POM/SauceDemo/loginPage";
 import { pageFixture } from "../../../hooks/pageFixture";
-import { InventoryPageSauceDemo } from "../../pom/SauceDemo/inventoryPage";
-import { CartPageSauceDemo } from "../../pom/SauceDemo/cartPage";
+import { InventoryPageSauceDemo } from "../../POM/SauceDemo/inventoryPage";
+import { CartPageSauceDemo } from "../../POM/SauceDemo/cartPage";
 // let this.loginPageSauceDemo;
 Given("I go to Login Page", async function () {
   this.loginPageSauceDemo = new LoginPageSauceDemo(pageFixture.page);

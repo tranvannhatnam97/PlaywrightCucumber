@@ -10,13 +10,12 @@ export class WorkspacePage extends AbstractPage {
   async checkIn(): Promise<void> {
     await expect(this.label).toBeVisible();
   }
-  async access(): Promise<void> {}
   async chooseNameSpaceWithName(workspaceName) {
     await this.page
       .locator(
         `//p[contains(text(),"createWorkspace")]/../../following-sibling::*//p[contains(text(),"${workspaceName}")]`
       )
       .click();
-    await this.page.waitForLoadState("domcontentloaded");
+    // await this.page.waitForLoadState("networkidle");
   }
 }

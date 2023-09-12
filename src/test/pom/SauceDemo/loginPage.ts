@@ -16,8 +16,8 @@ export class LoginPageSauceDemo extends AbstractPage {
   }
   async access() {
     await this.page.goto(this.url);
-    await this.checkIn();
     await this.page.waitForTimeout(1000);
+    await this.checkIn();
   }
   async enterUsername(username) {
     await this.usernameInput.type(username);

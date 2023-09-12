@@ -2,7 +2,6 @@ import { Page, expect } from "@playwright/test";
 export abstract class AbstractPage {
   abstract url: string;
   page = undefined as Page;
-  requests = undefined;
   abstract checkIn(): Promise<void>;
   async access(): Promise<void> {
     await this.page.goto(this.url);
@@ -19,6 +18,7 @@ export abstract class AbstractPage {
         await this.page["requests"].push(request);
       }
     });
+    await this.page.waitForLoadState("networkidle");
   }
   async getFirstApiResponseBody() {
     if (this.page["requests"].length == 0) {

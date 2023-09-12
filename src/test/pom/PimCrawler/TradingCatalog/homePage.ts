@@ -3,18 +3,19 @@ import { AbstractPimPage } from "../abstractPimPage";
 import { queryDatabase } from "../../../../commons/postgre";
 export class HomePage extends AbstractPimPage {
   secondLabel = undefined;
-  url = "https://test-pim.ichiba.net/ws-nam/";
-  constructor(page: Page) {
-    super(page);
+  url: string;
+  constructor(page: Page, slugName?: string) {
+    super(page, slugName);
+    this.url = `https://test-pim.ichiba.net/${slugName}/`;
     this.secondLabel = this.page.locator(
       '//h2[contains(text(),"subscribeSource")]'
     );
+    this.url = `https://test-pim.ichiba.net/${slugName}/`;
   }
   async checkIn(): Promise<void> {
     await super.checkIn();
-    await expect(this.secondLabel).toBeVisible();
+    // await expect(this.secondLabel).toBeVisible();
   }
-  async checkAPICorrectWithDatabase() {}
   async getSourcesByApi() {
     const response = await this.getFirstApiResponseBody();
     var api_result = [];

@@ -1,8 +1,8 @@
 [
   {
     "tc_id": "SMC-TC-001",
-    "paths": ["src/test/features/PimTrading/sample.feature"],
-    "steps": ["src/test/steps/PimTrading/sample.ts"]
+    "paths": ["src/test/features/PimCrawler/tradingCatalog.feature"],
+    "steps": ["src/test/steps/PimCrawler/tradingCatalog.ts"]
   },
   {
     "tc_id": "SMC-TC-002",

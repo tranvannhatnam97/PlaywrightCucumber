@@ -9,8 +9,8 @@ export abstract class AbstractCrawlerCatalogPage extends AbstractPimPage {
   productsMenuItem = undefined;
   catalogHierarchyMenuItem = undefined;
   blacklistMenuItem = undefined;
-  constructor(page: Page) {
-    super(page);
+  constructor(page: Page, slugName?: string) {
+    super(page, slugName);
     this.menuLevelTwo = this.page.locator(".MenuLevel2_main__mReTv");
     this.menuLevelTwoArrow = this.page.locator(
       '//div[contains(@class, "MenuLevel2_close__aks6k")]//*[contains(@class, "arrow")]'
@@ -34,6 +34,13 @@ export abstract class AbstractCrawlerCatalogPage extends AbstractPimPage {
   }
   async checkIn() {
     super.checkIn();
+    await expect(this.menuLevelTwo).toBeVisible();
+    await expect(this.menuLevelTwoArrow).toBeVisible();
+    await expect(this.subsribeSourceMenuItem).toBeVisible();
+    await expect(this.manageSourceMenuItem).toBeVisible();
+    await expect(this.manageTopicMenuItem).toBeVisible();
+    await expect(this.productsMenuItem).toBeVisible();
+    await expect(this.catalogHierarchyMenuItem).toBeVisible();
+    await expect(this.blacklistMenuItem).toBeVisible();
   }
-  async checkMenuLevelTwoOpen() {}
 }

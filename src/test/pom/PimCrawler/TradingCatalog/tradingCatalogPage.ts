@@ -3,11 +3,11 @@ import { HomePage } from "./homePage";
 export class TradingCatalogPage extends HomePage {
   secondLabel = undefined;
   topLabel = undefined;
-  url = "https://test-pim.ichiba.net/ws-nam/#";
-  constructor(page: Page) {
-    super(page);
+  constructor(page: Page, slugName?: string) {
+    super(page, slugName);
+    this.url = `https://test-pim.ichiba.net/$slugName/#`;
     this.topLabel = this.page.locator(
-      '//h1[contains(text(),"Tradding Catalog")]'
+      '//h1[contains(text(),"traddingCatalog")]'
     );
   }
   async checkIn(): Promise<void> {
