@@ -26,7 +26,7 @@ async function executeTestSet(testSet) {
     if (stderr) {
       console.error("Stderr:", stderr);
     }
-    console.log(`Command output: ${stdout}`);
+    console.log(`Result of ${testSet.tc_id}: ${stdout}`);
   });
 }
 

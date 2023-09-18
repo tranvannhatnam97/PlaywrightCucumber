@@ -10,7 +10,6 @@ export class HomePage extends AbstractPimPage {
     this.secondLabel = this.page.locator(
       '//h2[contains(text(),"subscribeSource")]'
     );
-    this.url = `https://test-pim.ichiba.net/${slugName}/`;
   }
   async checkIn(): Promise<void> {
     await super.checkIn();

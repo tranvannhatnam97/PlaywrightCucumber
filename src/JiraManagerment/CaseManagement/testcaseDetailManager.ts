@@ -1,14 +1,13 @@
 import axios from "axios";
-
+import { token, serverUrl } from "../apiToken";
 async function getTestcaseDetail(
   projectId: string,
-  testcaseId: string,
-  token: string
+  testcaseId: string
 ): Promise<any> {
   const config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: `https://tcms.aiojiraapps.com/aio-tcms/api/v1/project/${projectId}/testcase/${testcaseId}/detail?needDataInRTF=false`,
+    url: `${serverUrl}/api/v1/project/${projectId}/testcase/${testcaseId}/detail?needDataInRTF=false`,
     headers: {
       Authorization: `AioAuth ${token}`,
     },
@@ -22,8 +21,6 @@ async function getTestcaseDetail(
     throw new Error("Failed to retrieve test cases");
   }
 }
-getTestcaseDetail(
-  "SMC",
-  "SMC-TC-1994",
-  "OWRhODg3NzEtYmEyZC0zYzUzLWI0MWItYTU2ZGI1MjRhNzE3LmM3YTRhOTQyLTQxM2QtNDM1Zi1iZDZlLWYyNDIyMmJiNzM4Yg=="
-).then((data) => console.log(data));
+getTestcaseDetail("SMC", "SMC-TC-2001").then((data) => console.log(data));
+
+async function createTestcase() {}

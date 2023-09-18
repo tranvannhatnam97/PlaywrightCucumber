@@ -5,7 +5,7 @@ export class TradingCatalogPage extends HomePage {
   topLabel = undefined;
   constructor(page: Page, slugName?: string) {
     super(page, slugName);
-    this.url = `https://test-pim.ichiba.net/$slugName/#`;
+    this.url = `https://test-pim.ichiba.net/${slugName}/#`;
     this.topLabel = this.page.locator(
       '//h1[contains(text(),"traddingCatalog")]'
     );
