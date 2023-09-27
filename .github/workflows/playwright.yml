@@ -15,11 +15,7 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm install
+    - name: Install playwright
+      run: npx install playwright
     - name: Run Playwright tests
       run: npx ts-node ./TestManagement/testExecutor.ts
-    # - uses: actions/upload-artifact@v3
-    #   if: always()
-    #   with:
-    #     name: playwright-report
-    #     path: playwright-report/
-    #     retention-days: 30
