@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Run Playwright tests
-      run: npx ts-node ./TestManagement/testExcutor.ts
+      run: npx ts-node ./TestManagement/testExecutor.ts
     # - uses: actions/upload-artifact@v3
     #   if: always()
     #   with:
