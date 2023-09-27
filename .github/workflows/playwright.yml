@@ -15,7 +15,5 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm install
-    - name: Install playwright
-      run: npm cache clean --force && npx install playwright
     - name: Run Playwright tests
       run: npx ts-node ./TestManagement/testExecutor.ts
