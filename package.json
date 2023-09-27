@@ -4,18 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js test "
+    "test": "cucumber-js test --glue ",
+    "test-set": "npx ts-node ./TestManagement/testExecutor.ts",
+    "hello": "echo hello"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.37.1",
+    "chai": "^4.3.8",
+    "pg": "^8.11.3",
     "ts-node": "^10.9.1"
   },
   "dependencies": {
     "-": "^0.0.1",
     "@cucumber/cucumber": "^9.4.0",
-    "D": "^1.0.0"
+    "axios": "^1.5.0",
+    "D": "^1.0.0",
+    "gherkin": "^9.0.0",
+    "xlsx": "^0.18.5",
+    "yargs": "^17.7.2"
   }
 }

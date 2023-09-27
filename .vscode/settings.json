@@ -8,6 +8,13 @@
     "**/Thumbs.db": true
   },
   "hide-files.files": [],
-  "cucumber.features": ["src/test/features/*.feature"],
-  "cucumber.glue": ["src/test/steps/*.ts", "src/test/steps/*.js"]
+  "cucumber.features": [
+    "src/test/features/**/*.feature",
+    "src/test/features/*.feature"
+  ],
+  "cucumber.glue": [
+    "src/test/steps/*.ts",
+    "src/test/steps/**/*.ts",
+    "src/test/steps/*.js"
+  ]
 }

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Japan",
+    "sources": [
+      { "name": "Zozo" },
+      { "name": "Rakuma" },
+      { "name": "Yahoo Auction" },
+      { "name": "Mercari" },
+      { "name": "Yahoo Shopping" },
+      { "name": "Rakuten" },
+      { "name": "PaypayFleamarket" }
+    ]
+  },
+  { "name": "US", "sources": [{ "name": "EbayUs" }, { "name": "Macys" }] },
+  { "name": "Việt Nam", "sources": [{ "name": "Shopee" }, { "name": "Tiki" }] }
+]

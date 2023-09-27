@@ -3,15 +3,8 @@
     "formatOptions": {
       "snippetInterface": "async-await"
     },
-    "paths": ["src/test/features/pick_item.feature"],
     "dryRun": false,
-    "require": ["src/test/steps/search.ts", "src/test/steps/pick_item.ts"],
     "requireModule": ["ts-node/register"],
-    "format": [
-      "progress-bar",
-      "html:test-results/cucumber-report.html",
-      "json:test-results/cucumber-report.json",
-      "rerun:@rerun.txt"
-    ]
+    "format": ["progress", "rerun:@rerun.txt"]
   }
 }
